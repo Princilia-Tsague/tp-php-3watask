@@ -1,0 +1,136 @@
+$title-color: #2a3547;
+$text-secondary: #5a6a85;
+$primary-green: #2ecc71;
+$soft-rose: #eec5c5;
+$bg-creme: #fffaf5;
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  min-height: calc(100vh - 120px);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .home-content {
+    flex: 1;
+    max-width: 500px;
+
+    h1 {
+      font-size: 3.5rem;
+      color: $title-color;
+      margin-bottom: 0.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: $primary-green;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-family: 'Inria Serif', serif;
+      color: $text-secondary;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      font-size: 1.15rem;
+    }
+
+    .home-btn {
+      display: flex;
+      gap: 1.2rem;
+
+      .btn {
+        padding: 14px 32px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        color: white;
+        transition: all 0.3s ease;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          filter: brightness(1.05);
+        }
+
+        &.btnregister {
+          background-color: $soft-rose;
+          color: #2a3547;
+        }
+
+        &.btnlogin {
+          background-color: $primary-green;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .home-illustration {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+      img {
+          width: 100%;
+          max-width: 550px;
+          height: auto;
+          mix-blend-mode: multiply; 
+          opacity: 0.9; 
+      }
+  }
+}
+
+@media (max-width: 992px) {
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 30px;
+
+    .home-illustration {
+      justify-content: center;
+      margin-top: 40px;
+      order: 2;
+    }
+
+    .home-content {
+      order: 1;
+      max-width: 100%;
+      p { margin: 0 auto 2rem; }
+      .home-btn { justify-content: center; flex-direction: column; }
+    }
+  }
+}
+
+
+// form
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+        width: 100%;
+        padding-right: 45px;
+    }
+
+    i {
+        position: absolute;
+        right: 15px;
+        cursor: pointer;
+        color: #5a6a85;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+
+        &:hover {
+            color: #2ecc71;
+        }
+    }
+}

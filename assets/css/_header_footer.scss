@@ -1,0 +1,126 @@
+header {
+    background: #fffaf5;
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #2ecc71;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+
+            
+            a {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+                background: #2ecc71;
+                color: black;
+                padding: 10px 20px;
+                border-radius: 12px;
+                font-weight: 700;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+
+                i { font-size: 1.1rem; }
+
+                &:hover {
+                    background: #27ae60;
+                    transform: translateY(-2px);
+                }
+
+                
+                &.logout-link, &.btn-header {
+                    &[href*="register"], &[href*="logout"] {
+                        background: #eec5c5;
+                        color: #2a3547;
+                        &:hover { background: #e5b0b0; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --- RESPONSIVE ---
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+        nav .nav-icons a {
+            padding: 10px;
+            span {
+                display: none;
+                
+            }
+            i {
+                display: block;
+                margin: 0;
+                font-size: 1.3rem;
+                
+            }
+        }
+    }
+}
+
+// footer
+footer {
+    background-color: rgb(242, 220, 216); 
+    padding: 35px 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    margin-top: auto;
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+
+        .footer-info {
+            font-size: 1.1rem;
+            color: $text-dark;
+            font-weight: 500;
+
+            span {
+                font-weight: 800;
+                font-size: 1.2rem;
+            }
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+
+            a {
+                color: $text-dark;
+                font-size: 1.6rem;
+                transition: transform 0.2s, color 0.2s;
+
+                &:hover {
+                    color: #2ecc71;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

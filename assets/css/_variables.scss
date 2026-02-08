@@ -1,0 +1,37 @@
+
+$primary-green: #2ecc71;      
+$primary-blue: #3182ce;
+$bg-app: #fffaf5;             
+$danger-red: #e53e3e;        
+$text-main: #2a3547;          
+$text-secondary: #8898aa;   
+$text-dark: #2a3547;
+$primary-light: #adc1ff; 
+$white: #ffffff;
+
+
+$font-main: 'Inria Serif', serif;
+$h2-size: 2.2rem;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin btn-style {
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  
+  &:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px); 
+
+}
+}

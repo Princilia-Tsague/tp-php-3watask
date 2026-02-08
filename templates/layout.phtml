@@ -1,0 +1,55 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <title>Gestionnaire de tâches PrAnDo</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.php" class="logo">3WA Tasks</a>
+            
+            <div class="nav-icons">
+                <?php if (isset($_SESSION['user'])): ?>
+                    <?php $isAccountPage = (strpos($template, 'account') !== false); ?>
+            
+                    <?php if (!$isAccountPage): ?>
+                        <a href="account.php" title="Mon Compte">
+                            <i class="fa-regular fa-user"></i>
+                            <span>My account</span>
+                        </a>
+                    <?php endif; ?>
+            
+                    <a href="logout.php" title="Déconnexion" class="logout-link">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span>Disconnection</span>
+                    </a>
+            
+                    <?php else: ?>
+                <?php endif; ?>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <?php include $template ?>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                ©2026 - Travail réalisé par Anasse, Dorian et Princilia de la <span>3W Academy</span>
+            </div>
+    
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

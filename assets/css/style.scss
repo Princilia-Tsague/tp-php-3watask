@@ -1,0 +1,21 @@
+@import 'variables';
+body {
+    background-color: $bg-app;
+    font-family: $font-main;
+    color: $text-dark;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+@import 'header_footer';
+@import 'index_form';
+@import 'edit_task';
+@import 'account_rank';
+@import 'register_login';

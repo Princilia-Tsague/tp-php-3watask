@@ -1,0 +1,32 @@
+<section class="ranking-page">
+    <h2>Ranking</h2>
+
+    <div class="ranking-list">
+        <?php foreach ($rankings as $index => $row): 
+            $rank = $index + 1;
+            $isMe = ($row['id'] == $_SESSION['user']['id']);
+        ?>
+            <div class="rank-card <?= $isMe ? 'is-me' : '' ?>">
+                
+                <div class="rank-icon">
+                    <?php if ($rank === 1): ?>
+                        <img src="assets/image/imgone.png" alt="1st Place">
+                    <?php elseif ($rank === 2): ?>
+                        <img src="assets/image/imgtwo.png" alt="2nd Place">
+                    <?php elseif ($rank === 3): ?>
+                        <img src="assets/image/imgthree.png" alt="3rd Place">
+                    <?php else: ?>
+                        <span class="rank-number">#<?= $rank ?></span>
+                    <?php endif; ?>
+                </div>
+                
+                <div class="rank-name">
+                    <?= htmlspecialchars($row['username']) ?>
+                    <?php if ($row['id'] == $_SESSION['user']['id']): ?>
+                        <span class="me-tag">(You)</span>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>

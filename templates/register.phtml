@@ -1,0 +1,34 @@
+<div class="register">
+    <h2>Register</h2>
+    <div class="container">
+        <p class="welcome-text">Welcome in the world of perfect tasks priorizations !</p>
+        
+        <form method="post" action="register.php">
+            <label for="new-username">Username :</label>
+            <input type="text" id="new-username" name="new-username" required>
+            
+            <label for="new-email">Email :</label>
+            <input type="email" id="new-email" name="new-email"required>
+
+            <div class="form-group">
+                <label for="new-password">Password :</label>
+                <div class="password-wrapper">
+                    <input type="password" id="new-password" name="new-password" required>
+                    <i class="fa-regular fa-eye" id="togglePassword"></i>
+                </div>
+            </div>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <p class="switch-auth">Do you already have an account ? <a href="login.php">Login</a></p>
+
+        <?php if (isset($errors) && !empty($errors)) : ?>
+            <div class="message error">
+                <?php foreach ($errors as $error) : ?>
+                    <p><i class="fa-solid fa-circle-exclamation"></i> <?= $error ?></p>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+</div>
